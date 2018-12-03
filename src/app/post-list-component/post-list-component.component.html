@@ -1,0 +1,22 @@
+<div class="container">
+  <li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0}">
+
+  <div class="row" [ngStyle]="{color: getColor()}">
+    <p class="pull-left">
+      <strong>{{ title }}</strong>
+    </p>
+    <p class="pull-right">
+      {{ created_at | date: 'short' | uppercase }}
+    </p>
+  </div>
+
+  <p [ngStyle]="{color: getColor()}">{{ content }}</p>
+  <button class="btn btn-success"
+          (click)="onLove()">Love It!</button>
+  <button class="btn btn-danger"
+          (click)="onDontLove()">Don't love It!</button>
+  </li>
+</div>
+
